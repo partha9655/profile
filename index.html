@@ -3,126 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume</title>
-    <link rel="stylesheet" href="resources/profile.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Creative Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    
+    
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Left Sidebar -->
-        <div class="sidebar">
-            <div class="profile-photo">
-                <img src="https://via.placeholder.com/150x150/cccccc/ffffff?text=Photo" alt="Profile Photo">
-            </div>
-            
-            <div class="name">NAME<br>PLACEHOLDER</div>
-            <div class="title">Your Profession Here</div>
-            
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            
-            <div class="contact-info">
-                <h3>Contact Numbers</h3>
-                <p>+1 999 999 0909</p>
-                <p>Email:</p>
-                <p>info@slidemodel.com</p>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Creative Portfolio</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                   <li><a href="profile.html">Profile</a></li>
+                    <li><a href="workexperience.html">Experience</a></li>
+                    <li><a href="Getintouch.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="content-section">
+            <h1 class="title">
+                <span class="creative">Creative</span><br>
+                <span class="portfolio">Portfolio</span>
+            </h1>
+            <p class="description">
+                Discover my journey, experience, and passion for creative digital work. I specialize in transforming ideas into beautiful, functional experiences.
+            </p>
+            <div class="button-group">
+                <a href="#profile" class="btn btn-primary">View My Profile</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
 
-        <!-- Right Content -->
-        <div class="content">
-            <!-- About Me Section -->
-            <div class="section">
-                <h2 class="section-title">ABOUT ME</h2>
-                <p class="about-text">
-                    This is a sample text. Insert your desired text here. Insert your desired text here. Insert your 
-                    desired text here. This is a sample text. Insert your desired text here. Insert your desired text 
-                    here. Insert your desired text here.
-                </p>
-            </div>
-
-            <!-- Professional Skills Section -->
-            <div class="section">
-                <h2 class="section-title">PROFESSIONAL SKILLS</h2>
-                <div class="skills-grid">
-                    <div>
-                        <div class="skill-item">
-                            <div class="skill-name">HTML5 / CSS3</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">PHP / MySQL</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Laravel</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="skill-item">
-                            <div class="skill-name">JavaScript</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Adobe Photoshop</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Adobe XD</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employment History Section -->
-            <div class="section">
-                <h2 class="section-title">EMPLOYMENT HISTORY</h2>
-                <div class="employment-grid">
-                    <div class="job-item">
-                        <div class="job-year">2010<br>2012</div>
-                        <div class="job-title">Enter Your Job Position Here</div>
-                        <div class="job-company">Company Name / Address</div>
-                        <div class="job-description">
-                            This is a sample text. Insert your desired text here.
-                        </div>
-                    </div>
-                    <div class="job-item">
-                        <div class="job-year">2012<br>2016</div>
-                        <div class="job-title">Enter Your Job Position Here</div>
-                        <div class="job-company">Company Name / Address</div>
-                        <div class="job-description">
-                            This is a sample text. Insert your desired text here.
-                        </div>
-                    </div>
-                    <div class="job-item">
-                        <div class="job-year">2016<br>2021</div>
-                        <div class="job-title">Enter Your Job Position Here</div>
-                        <div class="job-company">Company Name / Address</div>
-                        <div class="job-description">
-                            This is a sample text. Insert your desired text here.
-                        </div>
-                    </div>
+        <div class="image-section">
+            <div class="workspace-image">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    Available for projects
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
