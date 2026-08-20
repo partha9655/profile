@@ -365,7 +365,7 @@
                         <span class="t1"></span><span class="t2"></span><span class="t3"></span>
                         <span class="terminal-title">request body</span>
                     </div>
-                    <form class="form-body">
+                    <form id="contact-form" class="form-body">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">name</label>
@@ -427,6 +427,9 @@
         <div class="wrap">© 2026 Parthasarathy T · Built with Java-shaped stubbornness.</div>
     </footer>
 
+    <!-- EmailJS Browser SDK -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Smooth-scroll for any anchor link (native scroll-behavior already handles most
         // browsers, this is the fallback + also used to sync active nav state on click).
@@ -457,6 +460,78 @@
         }, {rootMargin: '-45% 0px -45% 0px', threshold: 0});
 
         sections.forEach(sec => observer.observe(sec));
+    </script>
+
+    <!-- ============ EMAILJS CONTACT FORM ============ -->
+    <script>
+        (function () {
+            // Replace this with your EmailJS Public Key.
+            // EmailJS Dashboard -> Account -> Public Key
+            const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
+            emailjs.init({
+                publicKey: EMAILJS_PUBLIC_KEY
+            });
+
+            const contactForm = document.getElementById("contact-form");
+
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const submitButton = contactForm.querySelector(".submit-btn");
+
+                    const name = document.getElementById("name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const subject = document.getElementById("subject").value.trim();
+                    const message = document.getElementById("message").value.trim();
+
+                    const now = new Date();
+                    const time = now.toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false
+                    });
+
+                    // These names match the EmailJS template variables exactly.
+                    const templateParams = {
+                        subject: subject,
+                        name: name,
+                        time: time,
+                        email: email,
+                        message: message,
+                        from_name: name,
+                        reply_to: email
+                    };
+
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.disabled = true;
+                    submitButton.textContent = "Sending...";
+
+                    emailjs.send(
+                        "service_qeg0z8q",
+                        "template_5q8l9nn",
+                        templateParams
+                    )
+                    .then(function (response) {
+                        console.log("Email sent successfully:", response.status, response.text);
+
+                        alert("Message sent successfully! Thank you for getting in touch.");
+
+                        contactForm.reset();
+                    })
+                    .catch(function (error) {
+                        console.error("EmailJS failed:", error);
+
+                        alert("Unable to send the message right now. Please try again later.");
+                    })
+                    .finally(function () {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                    });
+                });
+            }
+        })();
     </script>
 
     <!-- ============ DYNAMIC EXPERIENCE CALCULATOR ============ -->
