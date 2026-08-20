@@ -38,7 +38,7 @@
         <p class="eyebrow">// full stack java developer</p>
         <h1 class="title">Parthasarathy T<br><span class="accent">builds systems that hold up.</span></h1>
         <p class="description">
-          3+ years turning ideas into scalable, production-ready systems — robust backend
+          <span data-experience="years-plus">3+ years</span> turning ideas into scalable, production-ready systems — robust backend
           architectures with Java, Spring Boot, and microservices, paired with clean Angular
           front-ends, shipped for real government-scale platforms.
         </p>
@@ -66,7 +66,7 @@
           <pre>{
   <span class="json-key">"name"</span><span class="json-punc">:</span> <span class="json-str">"Parthasarathy T"</span><span class="json-punc">,</span>
   <span class="json-key">"role"</span><span class="json-punc">:</span> <span class="json-str">"Full Stack Java Developer"</span><span class="json-punc">,</span>
-  <span class="json-key">"experience"</span><span class="json-punc">:</span> <span class="json-str">"3+ years"</span><span class="json-punc">,</span>
+  <span class="json-key">"experience"</span><span class="json-punc">:</span> <span class="json-str" data-experience="years-plus-str">"3+ years"</span><span class="json-punc">,</span>
   <span class="json-key">"stack"</span><span class="json-punc">:</span> [<span class="json-str">"Java"</span><span class="json-punc">,</span> <span class="json-str">"Spring Boot"</span><span class="json-punc">,</span> <span class="json-str">"Angular"</span>]<span class="json-punc">,</span>
   <span class="json-key">"location"</span><span class="json-punc">:</span> <span class="json-str">"Chennai, IN"</span><span class="json-punc">,</span>
   <span class="json-key">"availability"</span><span class="json-punc">:</span> <span class="json-str">"open to opportunities"</span>
@@ -98,7 +98,7 @@
         <div class="about-copy">
           <h3>Full-Stack Java Developer</h3>
           <p>
-            I'm a dedicated software developer with 3 years of hands-on experience building
+            I'm a dedicated software developer with <span data-experience="years-number">3</span> years of hands-on experience building
             scalable and efficient web applications. My expertise spans across Java, Spring
             Boot, Angular, and PostgreSQL. I enjoy crafting clean APIs, designing front-end
             interfaces, and deploying containerized applications using Docker. Passionate
@@ -111,7 +111,7 @@
           <div class="field"><span class="k">status</span><span class="v">Open to new opportunities</span></div>
           <div class="field"><span class="k">location</span><span class="v">Chennai, India</span></div>
           <div class="field"><span class="k">focus</span><span class="v">Backend • APIs • Microservices</span></div>
-          <div class="field"><span class="k">years_experience</span><span class="v">3</span></div>
+          <div class="field"><span class="k">years_experience</span><span class="v" data-experience="years-number">3</span></div>
         </div>
       </div>
 
@@ -145,7 +145,7 @@
             <div class="achievement-item">
               <div class="achievement-icon">3Y</div>
               <div class="achievement-details">
-                <h5>3 Years of Professional Experience</h5>
+                <h5><span data-experience="years-number">3</span> Years of Professional Experience</h5>
                 <p>In Backend &amp; Frontend Development</p>
               </div>
             </div>
@@ -186,8 +186,7 @@
       </div>
       <div class="section-head">
         <h2>Professional Journey</h2>
-        <p>Two roles, four platforms — a progression from IoT monitoring systems to
-          state-government citizen services, each one adding scale and complexity.</p>
+        <p>Three government platforms built over three years at Eagle Software, each one adding scale and complexity.</p>
       </div>
 
       <div class="experience-grid">
@@ -219,7 +218,7 @@
         <div class="exp-card">
           <div class="exp-head">
             <h3>Java Full Stack Developer</h3>
-            <span class="exp-meta">Nov 2022 – Present</span>
+            <span class="exp-meta" data-exp-range data-start="2022-11-01" data-end="present">Nov 2022 – Present</span>
           </div>
           <div class="exp-meta">Eagle Software · Full-time · Thousand Lights, Chennai</div>
           <p class="exp-desc">
@@ -234,7 +233,8 @@
             <div class="exp-project">
               <div class="exp-project-head">
                 <span class="exp-project-title">TNMVMD</span>
-                <span class="exp-project-meta">Vehicle Service Management · Tamil Nadu Govt · Jan 2023 – Jun 2024</span>
+                <span class="exp-project-meta">Vehicle Service Management · Tamil Nadu Govt ·
+                  <span data-exp-range data-start="2023-01-01" data-end="2024-06-30">Jan 2023 – Jun 2024</span></span>
               </div>
               <p class="exp-project-desc">
                 Enhanced vehicle service request management and operational efficiency, with
@@ -254,7 +254,8 @@
             <div class="exp-project">
               <div class="exp-project-head">
                 <span class="exp-project-title">KMDS GIS</span>
-                <span class="exp-project-meta">Citizen Services Portal · Jul 2024 – Dec 2024</span>
+                <span class="exp-project-meta">Citizen Services Portal ·
+                  <span data-exp-range data-start="2024-07-01" data-end="2024-12-31">Jul 2024 – Dec 2024</span></span>
               </div>
               <p class="exp-project-desc">
                 Built a citizen-facing platform for improving government-citizen interaction —
@@ -275,7 +276,8 @@
             <div class="exp-project">
               <div class="exp-project-head">
                 <span class="exp-project-title">BOCW</span>
-                <span class="exp-project-meta">Workforce Welfare Platform · Bihar Govt · Jan 2025 – Present</span>
+                <span class="exp-project-meta">Workforce Welfare Platform · Bihar Govt ·
+                  <span data-exp-range data-start="2025-01-01" data-end="present">Jan 2025 – Present</span></span>
               </div>
               <p class="exp-project-desc">
                 Citizen-facing workforce management platform enabling workers to register for
@@ -418,6 +420,74 @@
     }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
 
     sections.forEach(sec => observer.observe(sec));
+  </script>
+
+  <!-- ============ DYNAMIC EXPERIENCE CALCULATOR ============ -->
+  <script>
+    (function () {
+      // 🔧 Set your actual joining date here (month is 0-indexed: 10 = November)
+      const JOIN_DATE = new Date(2022, 10, 1); // Nov 1, 2022
+
+      function calculateExperience(start, end = new Date()) {
+        let years = end.getFullYear() - start.getFullYear();
+        let months = end.getMonth() - start.getMonth();
+
+        if (end.getDate() < start.getDate()) {
+          months--;
+        }
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+        return { years, months };
+      }
+
+      function updateExperienceDisplays() {
+        const { years } = calculateExperience(JOIN_DATE);
+        const displayYears = years < 1 ? 0 : years;
+
+        document.querySelectorAll('[data-experience]').forEach((el) => {
+          const mode = el.dataset.experience;
+          if (mode === 'years-plus') el.textContent = `${displayYears}+ years`;
+          if (mode === 'years-plus-str') el.textContent = `"${displayYears}+ years"`;
+          if (mode === 'years-number') el.textContent = displayYears;
+        });
+      }
+
+      const MONTH_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const formatMonthYear = (d) => `${MONTH_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+
+      function formatDuration({ years, months }) {
+        const parts = [];
+        if (years > 0) parts.push(`${years} yr${years !== 1 ? 's' : ''}`);
+        if (months > 0 || years === 0) parts.push(`${months} mo${months !== 1 ? 's' : ''}`);
+        return parts.join(' ');
+      }
+
+      // Updates every [data-exp-range] span: rebuilds "Mon YYYY – Mon YYYY (X yrs Y mos)"
+      // from data-start / data-end, so "Present" ranges grow automatically over time.
+      function updateExperienceRanges() {
+        document.querySelectorAll('[data-exp-range]').forEach((el) => {
+          const start = new Date(el.dataset.start);
+          const isOngoing = el.dataset.end === 'present';
+          const end = isOngoing ? new Date() : new Date(el.dataset.end);
+
+          const duration = calculateExperience(start, end);
+          const startLabel = formatMonthYear(start);
+          const endLabel = isOngoing ? 'Present' : formatMonthYear(end);
+
+          el.textContent = `${startLabel} – ${endLabel} (${formatDuration(duration)})`;
+        });
+      }
+
+      function updateAll() {
+        updateExperienceDisplays();
+        updateExperienceRanges();
+      }
+
+      document.addEventListener('DOMContentLoaded', updateAll);
+      setInterval(updateAll, 24 * 60 * 60 * 1000);
+    })();
   </script>
 
 </body>
